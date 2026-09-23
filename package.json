@@ -1,0 +1,30 @@
+{
+  "name": "incident_hub_api_jonathan_jimenez_3311976",
+  "version": "1.0.0",
+  "description": "API REST para la gestión de incidentes tecnológicos - IncidentHub API v1",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "api-rest",
+    "incidents"
+  ],
+  "author": "Jonathan Jimenez",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
