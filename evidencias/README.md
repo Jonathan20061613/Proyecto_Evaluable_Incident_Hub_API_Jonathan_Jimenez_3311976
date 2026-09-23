@@ -45,7 +45,7 @@
 | **Tecnologías**        | Node.js, TypeScript, Express     |
 | **Persistencia**       | En memoria (arrays)              |
 | **Puerto local**       | `http://localhost:3000`          |
-| **Repositorio GitHub** | _(enlace al repositorio)_        |
+| **Repositorio GitHub** | https://github.com/Jonathan20061613/Proyecto_Evaluable_Incident_Hub_API_Jonathan_Jimenez_3311976
 
 ---
 

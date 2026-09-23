@@ -16,7 +16,7 @@
 
 ---
 
-## 📑 Tabla de contenido
+## Tabla de contenido
 
 1. [Descripción del proyecto](#1-descripción-del-proyecto)
 2. [Problema que resuelve](#2-problema-que-resuelve)
@@ -40,10 +40,7 @@
 13. [Manejo centralizado de errores](#13-manejo-centralizado-de-errores)
 14. [Flujo de una petición](#14-flujo-de-una-petición)
 15. [Reglas de negocio especiales](#15-reglas-de-negocio-especiales)
-16. [Evidencias de pruebas](#16-evidencias-de-pruebas)
-17. [Reflexión: ¿por qué middlewares?](#17-reflexión-por-qué-middlewares)
-18. [Control de versiones (Git)](#18-control-de-versiones-git)
-19. [Autor](#19-autor)
+16. [Autor](#16-autor)
 
 ---
 
@@ -59,10 +56,10 @@ El proyecto fue construido siguiendo una **arquitectura por capas**, separando c
 
 Actualmente, los incidentes tecnológicos de la organización (equipos que no encienden, fallas de conectividad, problemas con impresoras, aplicaciones caídas, etc.) se reportan de manera informal mediante llamadas, mensajes de texto y conversaciones verbales. Esto genera:
 
-- ❌ Falta de trazabilidad de los incidentes reportados.
-- ❌ Dificultad para priorizar incidentes urgentes o críticos.
-- ❌ Ausencia de control sobre quién puede modificar o eliminar un registro.
-- ❌ Imposibilidad de generar métricas o reportes reales.
+- Falta de trazabilidad de los incidentes reportados.
+- Dificultad para priorizar incidentes urgentes o críticos.
+- Ausencia de control sobre quién puede modificar o eliminar un registro.
+- Imposibilidad de generar métricas o reportes reales.
 
 **IncidentHub API** centraliza el registro y seguimiento de estos incidentes mediante una API estructurada, segura y con reglas de negocio claras, permitiendo llevar un control real del ciclo de vida de cada incidente: desde que se abre (`OPEN`) hasta que se resuelve (`RESOLVED`).
 
@@ -145,10 +142,10 @@ incident_hub_api/
 
 ```bash
 # 1. Clonar el repositorio
-git clone <URL-DEL-REPOSITORIO>
+git clone URL https://github.com/Jonathan20061613/Proyecto_Evaluable_Incident_Hub_API_Jonathan_Jimenez_3311976.git
 
 # 2. Entrar a la carpeta del proyecto
-cd incident_hub_api
+cd incidenthub_api_jonathan_jimenez_3311976
 
 # 3. Instalar las dependencias
 npm install
@@ -496,13 +493,13 @@ flowchart TD
 
 ## 15. Reglas de negocio especiales
 
-### 🔺 Regla CRITICAL (Reto 4)
+### Regla CRITICAL 
 
 Cuando `priority` es `CRITICAL`, `estimatedMinutes` **no puede superar los 60 minutos**. Un incidente crítico con más de 60 minutos estimados es rechazado con `400 Bad Request`.
 
 > **Decisión técnica:** esta validación se implementó a nivel de middleware de validación (junto a `validate-time`/`validate-incident`), para mantener al controlador libre de reglas de negocio de bajo nivel y conservar la filosofía de "el controlador no valida, solo orquesta".
 
-### 🔁 Máquina de estados (Reto 5)
+### Máquina de estados
 
 Solo se permiten las siguientes transiciones de estado:
 
@@ -511,7 +508,7 @@ OPEN → IN_PROGRESS → RESOLVED
 OPEN → RESOLVED
 ```
 
-❌ **No permitido:**
+**No permitido:**
 
 ```
 RESOLVED → OPEN
@@ -520,50 +517,11 @@ RESOLVED → IN_PROGRESS
 
 Cualquier transición no permitida responde `400 Bad Request` con un mensaje descriptivo (por ejemplo: `"Invalid state transition from RESOLVED to OPEN"`).
 
----
-
-## 16. Evidencias de pruebas
-
-Las 20 pruebas obligatorias de la Sección 14 de la guía, junto con sus capturas de pantalla realizadas en **Thunder Client**, se encuentran documentadas en:
-
-```
-evidencias/README.md
-evidencias/img/
-```
-
----
-
-## 17. Reflexión: ¿por qué middlewares?
-
-> *Pregunta obligatoria de la guía: ¿qué ventajas ofrece implementar validaciones, autenticación y manejo de errores mediante middlewares en lugar de escribir toda esta lógica directamente dentro de cada controller?*
-
-Implementar estas responsabilidades como middlewares independientes permite que cada controlador se enfoque únicamente en la lógica de negocio propia del endpoint, sin mezclarse con validaciones repetitivas de autenticación o formato de datos. Esto hace que el código sea más fácil de leer, de mantener y de probar por separado, ya que cada middleware cumple una única función y puede reutilizarse en distintas rutas sin duplicar lógica. Además, si en el futuro cambia una regla de validación o el esquema de autenticación, el cambio se hace en un solo lugar en vez de modificar cada controlador uno por uno, reduciendo el riesgo de inconsistencias entre endpoints.
-
-*(Este apartado puede ampliarse o personalizarse con tus propias palabras antes de la entrega final.)*
-
----
-
-## 18. Control de versiones (Git)
-
-El repositorio refleja avances incrementales mediante commits organizados por funcionalidad:
-
-```bash
-git commit -m "chore: initialize TypeScript Express project"
-git commit -m "feat: add incident model and DTO"
-git commit -m "feat: implement incident controller"
-git commit -m "feat: add validation middlewares"
-git commit -m "feat: add authentication and authorization"
-git commit -m "feat: add centralized error handling"
-git commit -m "docs: add API documentation"
-```
-
----
-
-## 19. Autor
+## 16. Autor
 
 <div align="center">
 
-**Jonathan Andrés Jiménez Aguilera**
+**Jonathan Andrés Jiménez Aguilera - ADSO -3311976**
 
 Proyecto Evaluable — Capítulo V · IncidentHub API v1
 
