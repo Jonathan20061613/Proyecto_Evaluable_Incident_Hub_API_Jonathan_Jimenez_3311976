@@ -156,7 +156,7 @@ npm install
 ## 7. Ejecución
 
 ```bash
-# Modo desarrollo (con recarga automática)
+# Modo desarrollo
 npm run dev
 ```
 
@@ -496,8 +496,6 @@ flowchart TD
 ### Regla CRITICAL 
 
 Cuando `priority` es `CRITICAL`, `estimatedMinutes` **no puede superar los 60 minutos**. Un incidente crítico con más de 60 minutos estimados es rechazado con `400 Bad Request`.
-
-> **Decisión técnica:** esta validación se implementó a nivel de middleware de validación (junto a `validate-time`/`validate-incident`), para mantener al controlador libre de reglas de negocio de bajo nivel y conservar la filosofía de "el controlador no valida, solo orquesta".
 
 ### Máquina de estados
 
