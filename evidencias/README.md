@@ -40,8 +40,8 @@
 
 | Campo                  | Detalle                          |
 | ---------------------- | -------------------------------- |
-| **Proyecto**           | IncidentHub API v1               |
-| **Autor**              | Jonathan Andrés Jiménez Aguilera |
+| **Proyecto**           | IncidentHub API                  |
+| **Autor**              | Jonathan Andrés Jimenez Aguilera |
 | **Tecnologías**        | Node.js, TypeScript, Express     |
 | **Persistencia**       | En memoria (arrays)              |
 | **Puerto local**       | `http://localhost:3000`          |
@@ -494,7 +494,7 @@ img/
 
 ---
 
-### 6.5 POST CRITICAL > 60 min (Reto 4)
+### 6.5 POST CRITICAL
 
 **Explicación:** confirma la regla especial del Reto 4: cuando `priority` es `CRITICAL`, `estimatedMinutes` no puede superar 60.
 
@@ -716,7 +716,7 @@ img/
 
 ---
 
-### 8.3 PATCH RESOLVED → OPEN (Reto 5)
+### 8.3 PATCH RESOLVED → OPEN 
 
 **Explicación:** confirma que la transición inversa **no permitida** (de `RESOLVED` a `OPEN`) es rechazada por la lógica del Reto 5. Se ejecuta justo después de la prueba 8.2, cuando el incidente ya está en estado `RESOLVED`.
 
@@ -867,7 +867,7 @@ img/
 
 ---
 
-### 10.2 GET /critical (Reto 1)
+### 10.2 GET /critical
 
 **Explicación:** valida que la bandeja de incidentes críticos (Reto 1) retorna únicamente los incidentes con `priority: "CRITICAL"`, junto con el total.
 
@@ -908,7 +908,7 @@ img/
 
 ---
 
-### 10.3 GET /stats (Reto 3)
+### 10.3 GET /stats 
 
 **Explicación:** confirma que el resumen operacional (Reto 3) calcula dinámicamente las métricas a partir de los datos actuales, sin valores escritos manualmente.
 
