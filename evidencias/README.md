@@ -41,7 +41,7 @@
 | Campo                  | Detalle                          |
 | ---------------------- | -------------------------------- |
 | **Proyecto**           | IncidentHub API                  |
-| **Autor**              | Jonathan Andrés Jimenez Aguilera |
+| **Autor**              | Jonathan Andres Jimenez Aguilera |
 | **Tecnologías**        | Node.js, TypeScript, Express     |
 | **Persistencia**       | En memoria (arrays)              |
 | **Puerto local**       | `http://localhost:3000`          |

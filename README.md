@@ -519,7 +519,7 @@ Cualquier transición no permitida responde `400 Bad Request` con un mensaje des
 
 <div align="center">
 
-**Jonathan Andrés Jimenez Aguilera - ADSO - 3311976**
+**Jonathan Andres Jimenez Aguilera - ADSO - 3311976**
 
 Proyecto Evaluable · IncidentHub API
 
